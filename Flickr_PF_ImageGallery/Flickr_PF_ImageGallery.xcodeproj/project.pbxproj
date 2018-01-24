@@ -8,21 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		17326CF7BF8EE4416B36EE90 /* Pods_Flickr_PF_ImageGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D93AC129702EB66088A1C02B /* Pods_Flickr_PF_ImageGallery.framework */; };
+		5C23CB372018D1EF00D3B3EB /* PuppyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23CB362018D1EF00D3B3EB /* PuppyCollectionView.swift */; };
+		5C4B2F942017B7DF009CE347 /* ImagesFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B2F932017B7DF009CE347 /* ImagesFeedCell.swift */; };
 		5C5067D620179E5200459516 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5067D520179E5200459516 /* AppDelegate.swift */; };
-		5C5067D820179E5200459516 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5067D720179E5200459516 /* ViewController.swift */; };
 		5C5067DB20179E5200459516 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C5067D920179E5200459516 /* Main.storyboard */; };
 		5C5067DD20179E5200459516 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C5067DC20179E5200459516 /* Assets.xcassets */; };
 		5C5067E020179E5200459516 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C5067DE20179E5200459516 /* LaunchScreen.storyboard */; };
+		5C5067E92017A52400459516 /* ImageGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5067E82017A52400459516 /* ImageGalleryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C23CB362018D1EF00D3B3EB /* PuppyCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppyCollectionView.swift; sourceTree = "<group>"; };
+		5C4B2F932017B7DF009CE347 /* ImagesFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesFeedCell.swift; sourceTree = "<group>"; };
 		5C5067D220179E5200459516 /* Flickr_PF_ImageGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flickr_PF_ImageGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C5067D520179E5200459516 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5C5067D720179E5200459516 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5C5067DA20179E5200459516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5C5067DC20179E5200459516 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C5067DF20179E5200459516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C5067E120179E5200459516 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C5067E82017A52400459516 /* ImageGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryViewController.swift; sourceTree = "<group>"; };
 		B70FCB3E1D2F00A94AC74745 /* Pods-Flickr_PF_ImageGallery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flickr_PF_ImageGallery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flickr_PF_ImageGallery/Pods-Flickr_PF_ImageGallery.debug.xcconfig"; sourceTree = "<group>"; };
 		C7720ED29DCB4CB92B81C50A /* Pods-Flickr_PF_ImageGallery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flickr_PF_ImageGallery.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flickr_PF_ImageGallery/Pods-Flickr_PF_ImageGallery.release.xcconfig"; sourceTree = "<group>"; };
 		D93AC129702EB66088A1C02B /* Pods_Flickr_PF_ImageGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flickr_PF_ImageGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +53,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5C23CB382018E3E700D3B3EB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5C4B2F932017B7DF009CE347 /* ImagesFeedCell.swift */,
+				5C23CB362018D1EF00D3B3EB /* PuppyCollectionView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		5C5067C920179E5100459516 = {
 			isa = PBXGroup;
 			children = (
@@ -70,14 +83,23 @@
 		5C5067D420179E5200459516 /* Flickr_PF_ImageGallery */ = {
 			isa = PBXGroup;
 			children = (
+				5C23CB382018E3E700D3B3EB /* Components */,
+				5C5067E72017A4FA00459516 /* ViewControllers */,
 				5C5067D520179E5200459516 /* AppDelegate.swift */,
-				5C5067D720179E5200459516 /* ViewController.swift */,
 				5C5067D920179E5200459516 /* Main.storyboard */,
 				5C5067DC20179E5200459516 /* Assets.xcassets */,
 				5C5067DE20179E5200459516 /* LaunchScreen.storyboard */,
 				5C5067E120179E5200459516 /* Info.plist */,
 			);
 			path = Flickr_PF_ImageGallery;
+			sourceTree = "<group>";
+		};
+		5C5067E72017A4FA00459516 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5C5067E82017A52400459516 /* ImageGalleryViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		6220F0AA0F101A86C22766A8 /* Frameworks */ = {
@@ -214,8 +236,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C5067D820179E5200459516 /* ViewController.swift in Sources */,
+				5C23CB372018D1EF00D3B3EB /* PuppyCollectionView.swift in Sources */,
 				5C5067D620179E5200459516 /* AppDelegate.swift in Sources */,
+				5C4B2F942017B7DF009CE347 /* ImagesFeedCell.swift in Sources */,
+				5C5067E92017A52400459516 /* ImageGalleryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
