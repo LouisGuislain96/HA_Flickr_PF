@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		17326CF7BF8EE4416B36EE90 /* Pods_Flickr_PF_ImageGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D93AC129702EB66088A1C02B /* Pods_Flickr_PF_ImageGallery.framework */; };
-		5C23CB372018D1EF00D3B3EB /* PuppyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23CB362018D1EF00D3B3EB /* PuppyCollectionView.swift */; };
+		5C23CB372018D1EF00D3B3EB /* FeedsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23CB362018D1EF00D3B3EB /* FeedsCollectionView.swift */; };
+		5C23CB3B201A1A7000D3B3EB /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23CB3A201A1A7000D3B3EB /* DataManager.swift */; };
+		5C2E5D4E201A2E6E00F6E4AB /* FlickrPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2E5D4D201A2E6E00F6E4AB /* FlickrPhoto.swift */; };
 		5C4B2F942017B7DF009CE347 /* ImagesFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B2F932017B7DF009CE347 /* ImagesFeedCell.swift */; };
 		5C5067D620179E5200459516 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5067D520179E5200459516 /* AppDelegate.swift */; };
 		5C5067DB20179E5200459516 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C5067D920179E5200459516 /* Main.storyboard */; };
@@ -18,7 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5C23CB362018D1EF00D3B3EB /* PuppyCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppyCollectionView.swift; sourceTree = "<group>"; };
+		5C23CB362018D1EF00D3B3EB /* FeedsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsCollectionView.swift; sourceTree = "<group>"; };
+		5C23CB3A201A1A7000D3B3EB /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		5C2E5D4D201A2E6E00F6E4AB /* FlickrPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhoto.swift; sourceTree = "<group>"; };
 		5C4B2F932017B7DF009CE347 /* ImagesFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesFeedCell.swift; sourceTree = "<group>"; };
 		5C5067D220179E5200459516 /* Flickr_PF_ImageGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flickr_PF_ImageGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C5067D520179E5200459516 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,9 +61,18 @@
 			isa = PBXGroup;
 			children = (
 				5C4B2F932017B7DF009CE347 /* ImagesFeedCell.swift */,
-				5C23CB362018D1EF00D3B3EB /* PuppyCollectionView.swift */,
+				5C23CB362018D1EF00D3B3EB /* FeedsCollectionView.swift */,
+				5C2E5D4D201A2E6E00F6E4AB /* FlickrPhoto.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		5C23CB39201A1A4C00D3B3EB /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				5C23CB3A201A1A7000D3B3EB /* DataManager.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		5C5067C920179E5100459516 = {
@@ -83,6 +96,7 @@
 		5C5067D420179E5200459516 /* Flickr_PF_ImageGallery */ = {
 			isa = PBXGroup;
 			children = (
+				5C23CB39201A1A4C00D3B3EB /* DataManager */,
 				5C23CB382018E3E700D3B3EB /* Components */,
 				5C5067E72017A4FA00459516 /* ViewControllers */,
 				5C5067D520179E5200459516 /* AppDelegate.swift */,
@@ -202,9 +216,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Flickr_PF_ImageGallery/Pods-Flickr_PF_ImageGallery-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -236,7 +253,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C23CB372018D1EF00D3B3EB /* PuppyCollectionView.swift in Sources */,
+				5C23CB372018D1EF00D3B3EB /* FeedsCollectionView.swift in Sources */,
+				5C2E5D4E201A2E6E00F6E4AB /* FlickrPhoto.swift in Sources */,
+				5C23CB3B201A1A7000D3B3EB /* DataManager.swift in Sources */,
 				5C5067D620179E5200459516 /* AppDelegate.swift in Sources */,
 				5C4B2F942017B7DF009CE347 /* ImagesFeedCell.swift in Sources */,
 				5C5067E92017A52400459516 /* ImageGalleryViewController.swift in Sources */,

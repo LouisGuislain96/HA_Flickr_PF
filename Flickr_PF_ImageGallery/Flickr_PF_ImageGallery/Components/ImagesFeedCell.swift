@@ -14,4 +14,6 @@ class ImagesFeedCell: UICollectionViewCell {
     
     @IBOutlet var metaDataLabel: UILabel!
     @IBOutlet var feedImageView: UIImageView!
+    @IBOutlet var kittensImageView: UIImageView!
+    @IBOutlet var publicFeedImageView: UIImageView!
 }

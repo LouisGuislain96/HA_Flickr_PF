@@ -8,6 +8,6 @@
 
 import UIKit
 
-class PuppyCollectionView: UICollectionView {
+class FeedsCollectionView: UICollectionView {
 
 }
