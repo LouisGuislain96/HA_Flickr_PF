@@ -11,9 +11,12 @@ import UIKit
 import Alamofire
 
 struct ImagesUrl {
-    static let puppiesUrl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=d2eab41b196d9ba760b21e0b3004b48d&tags=dogs&per_page=25&format=json&nojsoncallback=1&auth_token=72157692732686055-8f68ac933879b742&api_sig=0d875b371b9733fc646759867e51da61"      // If we want to change dogs to something else, the tags in the URL have to be modified
-    static let kittensUrl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=d2eab41b196d9ba760b21e0b3004b48d&tags=cats&per_page=25&format=json&nojsoncallback=1&auth_token=72157692732686055-8f68ac933879b742&api_sig=0d875b371b9733fc646759867e51da61"      // If we want to change kittens to something else, the tags in the URL have to be modified
+    static let puppiesUrl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=9794b500403919a4389764e8570d3f04&tags=dogs&per_page=25&format=json&nojsoncallback=1&auth_token=72157665146145148-554d0292695af162&api_sig=7453229758025efbcaf4edfbfea0b9da"      // If we want to change dogs to something else, the tags in the URL have to be modified
+    static let kittensUrl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=9794b500403919a4389764e8570d3f04&tags=cats&per_page=25&format=json&nojsoncallback=1&auth_token=72157665146145148-554d0292695af162&api_sig=4e6b559bc67df155f4b3caed0645bdf8"      // If we want to change kittens to something else, the tags in the URL have to be modified
     static let publicFeedUrl = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1"
+        // This is a URL that returns the public feed from Flickr. The JSON format it returns does not contain the same data as
+        // for the two previous ones. The fields in the JSON are not formatted the same way and it did not have time to
+        // reformat in the correct way.
 }
 
 
@@ -36,14 +39,15 @@ class ImageGalleryViewController: UIViewController, UICollectionViewDataSource, 
 
         performPhotosFetching(url: ImagesUrl.puppiesUrl, tag: "dogs")
         performPhotosFetching(url: ImagesUrl.kittensUrl, tag: "kittens")
-        performPhotosFetching(url: ImagesUrl.publicFeedUrl, tag: "")
         puppyImagesCollectionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap)))
+        kittensImagesCollectionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap)))
     }
     
     //MARK: - Delegate
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         if collectionView == puppyImagesCollectionView {
             return puppyPhotos.count
         } else if collectionView == kittensImagesCollectionView {
@@ -51,15 +55,8 @@ class ImageGalleryViewController: UIViewController, UICollectionViewDataSource, 
         } else if collectionView == publicFeedImagesCollectionView {
             return publicFeedPhotos.count
         }
-        return 20
+        return 25       // Default value in case there is an error in the data fetching.
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            let vc = FullScreenPictureViewController()
-            let data = try? Data(contentsOf: puppyPhotos[indexPath.row].photoURL as URL)
-            vc.fullScreenImageView.image = UIImage(data: data!)
-            self.present(vc, animated: true, completion: nil)
-        }
     
     //MARK: - Datasource
     
@@ -77,15 +74,24 @@ class ImageGalleryViewController: UIViewController, UICollectionViewDataSource, 
             cell.imageView.image = UIImage(data: data!)
             cell.metaDataLabel.text = kittensPhotos[indexPath.row].title
             return cell
-        } else if collectionView == publicFeedImagesCollectionView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PublicFeedCell", for: indexPath as IndexPath) as! ImagesFeedCell
-            let data = try? Data(contentsOf: publicFeedPhotos[indexPath.row].photoURL as URL)
-            cell.imageView.image = UIImage(data: data!)
-            cell.metaDataLabel.text = publicFeedPhotos[indexPath.row].title
-            return cell
         }
-        return UICollectionViewCell()
+        return UICollectionViewCell()   // Return an empty cell in case there is a problem with storing the data in the cells.
     }
+        
+        //  This is the part of the code that was supposed to take care of the public feed, for which I didn't have time to
+        // reformat the public feed's data. The process would've been the same, but I would have needed to create a separate
+        // class with different fields, and to reformat the URL of the picture given in the JSON because all elements were
+        // separated with '\'. I rather focused on the things for which I had enough time to make sure most of the assignment
+        // was working.
+    
+//        else if collectionView == publicFeedImagesCollectionView {
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PublicFeedCell", for: indexPath as IndexPath) as! ImagesFeedCell
+//            let data = try? Data(contentsOf: publicFeedPhotos[indexPath.row].photoURL as URL)
+//            cell.imageView.image = UIImage(data: data!)
+//            cell.metaDataLabel.text = publicFeedPhotos[indexPath.row].title
+//            return cell
+//        }
+    
     
     //MARK: - Private
     
@@ -103,29 +109,38 @@ class ImageGalleryViewController: UIViewController, UICollectionViewDataSource, 
                 self.secondHeaderLabel.text = "kittens"
                 self.kittensPhotos = flickrPhotos!
                 self.kittensImagesCollectionView.reloadData()
-            } else if tag == "" {
-                self.thirdHeaderLabel.text = "public feed"
-                self.publicFeedPhotos = flickrPhotos!
-                self.publicFeedImagesCollectionView.reloadData()
             }
-            
         })
-        }
+    }
+    
+    // This is the part where the data from the public feed would have been stored in the publicFeed UIImage Array.
+//            else if tag == "" {
+//                self.thirdHeaderLabel.text = "public feed"
+//                self.publicFeedPhotos = flickrPhotos!
+//                self.publicFeedImagesCollectionView.reloadData()
+//            }
     
     // This method triggers the expected behavior when a cell from one of the collection view is pressed. It presents the ViewController with the tapped picture in full screen.
-    //TO DO: Finish implementing the way of passing the image to the FullScreenViewController
     
     @objc private func tap(sender: UIGestureRecognizer) {
         if let indexPath = self.puppyImagesCollectionView?.indexPathForItem(at: sender.location(in: self.puppyImagesCollectionView)) {
-//            let vc = FullScreenPictureViewController()
-//            let data = try? Data(contentsOf: puppyPhotos[indexPath.row].photoURL as URL)
-//            vc.fullScreenImageView.image = UIImage(data: data!)
-//            self.present(vc, animated: true, completion: nil)
-            let cell = self.puppyImagesCollectionView?.cellForItem(at: indexPath)
-            print(indexPath)
-            print("you can do something with the cell or index path here")
-        } else {
-            print("collectionView was tapped")
+            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FullScreenPictureViewController") as? FullScreenPictureViewController {
+                
+                let data = try? Data(contentsOf: puppyPhotos[indexPath.row].photoURL as URL)
+                if let image = UIImage(data: data!) {
+                    vc.fullScreenImage = image
+                    self.present(vc, animated: true, completion: nil)
+                }
+            }
+        } else if let indexPath = self.kittensImagesCollectionView?.indexPathForItem(at: sender.location(in: self.kittensImagesCollectionView)) {
+            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FullScreenPictureViewController") as? FullScreenPictureViewController {
+                
+                let data = try? Data(contentsOf: kittensPhotos[indexPath.row].photoURL as URL)
+                if let image = UIImage(data: data!) {
+                    vc.fullScreenImage = image
+                    self.present(vc, animated: true, completion: nil)
+                }
+            }
         }
     }
 }

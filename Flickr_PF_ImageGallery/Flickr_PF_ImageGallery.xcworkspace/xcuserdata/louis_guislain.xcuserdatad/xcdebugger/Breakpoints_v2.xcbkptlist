@@ -10,13 +10,93 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flickr_PF_ImageGallery/ViewControllers/ImageGalleryViewController.swift"
-            timestampString = "538845126.541849"
+            timestampString = "538855390.07833"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "performPhotosFetching(url:tag:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Flickr_PF_ImageGallery/ViewControllers/ImageGalleryViewController.swift"
+            timestampString = "538855390.0784121"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "performPhotosFetching(url:tag:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Flickr_PF_ImageGallery/ViewControllers/ImageGalleryViewController.swift"
+            timestampString = "538855390.078478"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "performPhotosFetching(url:tag:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Flickr_PF_ImageGallery/ViewControllers/ImageGalleryViewController.swift"
+            timestampString = "538855390.078537"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "102"
             endingLineNumber = "102"
             landmarkName = "performPhotosFetching(url:tag:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Flickr_PF_ImageGallery.ImageGalleryViewController.(performPhotosFetching in _781663126C58DE10990C89FA1FD18217)(url: Swift.String, tag: Swift.String) -&gt; ()"
+                  moduleName = "Flickr_PF_ImageGallery"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/louis_guislain/Dev/HA_Flickr_PF/Flickr_PF_ImageGallery/Flickr_PF_ImageGallery/ViewControllers/ImageGalleryViewController.swift"
+                  timestampString = "538849215.691451"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "178">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;Flickr_PF_ImageGallery.FlickrPhoto&gt;&gt;) -&gt; () in Flickr_PF_ImageGallery.ImageGalleryViewController.(performPhotosFetching in _781663126C58DE10990C89FA1FD18217)(url: Swift.String, tag: Swift.String) -&gt; ()"
+                  moduleName = "Flickr_PF_ImageGallery"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/louis_guislain/Dev/HA_Flickr_PF/Flickr_PF_ImageGallery/Flickr_PF_ImageGallery/ViewControllers/ImageGalleryViewController.swift"
+                  timestampString = "538849215.694519"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "33">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -25,13 +105,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Flickr_PF_ImageGallery/ViewControllers/ImageGalleryViewController.swift"
-            timestampString = "538845126.542215"
+            filePath = "Flickr_PF_ImageGallery/DataManager/DataManager.swift"
+            timestampString = "538855390.078589"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "performPhotosFetching(url:tag:)"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "fetchPhotosFromTag(url:tag:onCompletion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +121,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Flickr_PF_ImageGallery/ViewControllers/ImageGalleryViewController.swift"
-            timestampString = "538845126.542461"
+            filePath = "Flickr_PF_ImageGallery/DataManager/DataManager.swift"
+            timestampString = "538855390.078898"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "performPhotosFetching(url:tag:)"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "fetchPhotosFromTag(url:tag:onCompletion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

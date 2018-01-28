@@ -13,4 +13,20 @@ class FullScreenPictureViewController: UIViewController {
     
     @IBOutlet var fullScreenImageView: UIImageView!
     @IBOutlet var backButton: UIButton!
+    
+    var fullScreenImage = UIImage()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        fullScreenImageView.image = fullScreenImage
+    }
+
+    // This IBAction makes the ImageGalleryViewController pop back when the backButton is pressed
+    
+    @IBAction func backAction(_ sender: Any) {
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ImageGalleryViewController") as? ImageGalleryViewController {
+            present(vc, animated: true, completion: nil)
+        }
+    }
 }

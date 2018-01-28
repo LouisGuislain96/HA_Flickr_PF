@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		17326CF7BF8EE4416B36EE90 /* Pods_Flickr_PF_ImageGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D93AC129702EB66088A1C02B /* Pods_Flickr_PF_ImageGallery.framework */; };
-		5C23CB372018D1EF00D3B3EB /* FeedsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23CB362018D1EF00D3B3EB /* FeedsCollectionView.swift */; };
 		5C23CB3B201A1A7000D3B3EB /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23CB3A201A1A7000D3B3EB /* DataManager.swift */; };
 		5C2E5D4E201A2E6E00F6E4AB /* FlickrPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2E5D4D201A2E6E00F6E4AB /* FlickrPhoto.swift */; };
 		5C4B2F942017B7DF009CE347 /* ImagesFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B2F932017B7DF009CE347 /* ImagesFeedCell.swift */; };
@@ -21,7 +20,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5C23CB362018D1EF00D3B3EB /* FeedsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsCollectionView.swift; sourceTree = "<group>"; };
 		5C23CB3A201A1A7000D3B3EB /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		5C2E5D4D201A2E6E00F6E4AB /* FlickrPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhoto.swift; sourceTree = "<group>"; };
 		5C4B2F932017B7DF009CE347 /* ImagesFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesFeedCell.swift; sourceTree = "<group>"; };
@@ -63,7 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				5C4B2F932017B7DF009CE347 /* ImagesFeedCell.swift */,
-				5C23CB362018D1EF00D3B3EB /* FeedsCollectionView.swift */,
 				5C2E5D4D201A2E6E00F6E4AB /* FlickrPhoto.swift */,
 			);
 			path = Components;
@@ -256,7 +253,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C23CB372018D1EF00D3B3EB /* FeedsCollectionView.swift in Sources */,
 				5C2E5D4E201A2E6E00F6E4AB /* FlickrPhoto.swift in Sources */,
 				5C23CB3B201A1A7000D3B3EB /* DataManager.swift in Sources */,
 				5C5067D620179E5200459516 /* AppDelegate.swift in Sources */,
