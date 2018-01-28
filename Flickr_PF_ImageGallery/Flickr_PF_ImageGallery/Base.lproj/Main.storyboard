@@ -13,7 +13,6 @@
         <!--Image Gallery View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ImageGalleryViewController" customModule="Flickr_PF_ImageGallery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -25,7 +24,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="zsP-3Q-i9O"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DGB-gY-tTQ">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DGB-gY-tTQ">
                                     <size key="itemSize" width="121" height="125"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -33,7 +32,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PuppyCell" id="4NO-Pr-szK" customClass="ImagesFeedCell" customModule="Flickr_PF_ImageGallery" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="121" height="125"/>
+                                        <rect key="frame" x="0.0" y="1.5" width="121" height="125"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="121" height="125"/>
@@ -61,7 +60,7 @@
                                             <constraint firstItem="WKs-5a-KGO" firstAttribute="top" secondItem="b7j-Gl-TsV" secondAttribute="bottom" constant="3" id="p9m-Ao-fNe"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="feedImageView" destination="b7j-Gl-TsV" id="3kj-Js-6Lk"/>
+                                            <outlet property="imageView" destination="b7j-Gl-TsV" id="OLC-fo-3Ha"/>
                                             <outlet property="metaDataLabel" destination="WKs-5a-KGO" id="jKz-pk-aJu"/>
                                         </connections>
                                     </collectionViewCell>
@@ -89,7 +88,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="yTk-ds-zGT"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6q8-y8-hzG">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6q8-y8-hzG">
                                     <size key="itemSize" width="121" height="125"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -97,7 +96,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="KittenCell" id="8JU-Fz-8bD" customClass="ImagesFeedCell" customModule="Flickr_PF_ImageGallery" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="121" height="125"/>
+                                        <rect key="frame" x="0.0" y="1.5" width="121" height="125"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="121" height="125"/>
@@ -124,7 +123,8 @@
                                             <constraint firstAttribute="bottom" secondItem="oOC-oZ-GEf" secondAttribute="bottom" id="s6p-CE-CVM"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="kittensImageView" destination="I44-5A-Rkt" id="RdV-Aq-0i7"/>
+                                            <outlet property="imageView" destination="I44-5A-Rkt" id="vWI-Y2-ePN"/>
+                                            <outlet property="metaDataLabel" destination="oOC-oZ-GEf" id="Kx7-Q1-tPl"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -139,7 +139,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="chp-zu-ePm"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dcE-Nm-4qT">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dcE-Nm-4qT">
                                     <size key="itemSize" width="121" height="125"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -147,7 +147,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PublicFeedCell" id="f7L-4e-y2y" customClass="ImagesFeedCell" customModule="Flickr_PF_ImageGallery" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="121" height="125"/>
+                                        <rect key="frame" x="0.0" y="1.5" width="121" height="125"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="121" height="125"/>
@@ -174,7 +174,8 @@
                                             <constraint firstAttribute="bottom" secondItem="jxF-oJ-d40" secondAttribute="bottom" constant="20" id="jVf-j2-izt"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="publicFeedImageView" destination="jxF-oJ-d40" id="Yos-Cq-Crs"/>
+                                            <outlet property="imageView" destination="jxF-oJ-d40" id="OJc-Fm-llC"/>
+                                            <outlet property="metaDataLabel" destination="Eph-jd-64N" id="CLk-QK-Rme"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -223,8 +224,46 @@
                         <outlet property="thirdHeaderLabel" destination="hax-Ru-zej" id="A0T-eI-fwZ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="669.60000000000002" y="31.934032983508249"/>
+        </scene>
+        <!--Full Screen Picture View Controller-->
+        <scene sceneID="HRc-7d-kaA">
+            <objects>
+                <viewController id="qfn-z1-dqd" customClass="FullScreenPictureViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cQ4-QR-qXr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qvf-J7-q3j">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kId-RY-zsy">
+                                <rect key="frame" x="16" y="40" width="92" height="45"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kId-RY-zsy" firstAttribute="bottom" secondItem="Qvf-J7-q3j" secondAttribute="bottom" constant="-582" id="2jm-YQ-GbQ"/>
+                            <constraint firstItem="Qvf-J7-q3j" firstAttribute="leading" secondItem="XMQ-Ek-uSK" secondAttribute="leading" id="Djo-zO-gel"/>
+                            <constraint firstItem="Qvf-J7-q3j" firstAttribute="leading" secondItem="kId-RY-zsy" secondAttribute="trailing" constant="-108" id="VqB-M3-Qgn"/>
+                            <constraint firstItem="Qvf-J7-q3j" firstAttribute="top" secondItem="XMQ-Ek-uSK" secondAttribute="top" id="bwF-1K-nkJ"/>
+                            <constraint firstItem="kId-RY-zsy" firstAttribute="top" secondItem="Qvf-J7-q3j" secondAttribute="top" constant="20" id="eJK-6p-pVL"/>
+                            <constraint firstItem="XMQ-Ek-uSK" firstAttribute="trailing" secondItem="Qvf-J7-q3j" secondAttribute="trailing" id="uQ2-E7-vAV"/>
+                            <constraint firstItem="XMQ-Ek-uSK" firstAttribute="bottom" secondItem="Qvf-J7-q3j" secondAttribute="bottom" id="ub5-O3-BvQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XMQ-Ek-uSK"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="kId-RY-zsy" id="gR3-BQ-LCm"/>
+                        <outlet property="fullScreenImageView" destination="Qvf-J7-q3j" id="Bdg-pY-DMk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m6U-Pb-pgc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1671.2" y="30.134932533733135"/>
         </scene>
     </scenes>
 </document>
