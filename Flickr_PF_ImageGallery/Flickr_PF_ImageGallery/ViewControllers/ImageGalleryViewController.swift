@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 import Alamofire
 
+// Ifever the images don't load, copy paste the link in an internet navigator. It should say "Invalid Auth Token" in which case the only solution is for me to provide a new one, since it's related to my Authentication key.
+
 struct ImagesUrl {
-    static let puppiesUrl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=9794b500403919a4389764e8570d3f04&tags=dogs&per_page=25&format=json&nojsoncallback=1&auth_token=72157665146145148-554d0292695af162&api_sig=7453229758025efbcaf4edfbfea0b9da"      // If we want to change dogs to something else, the tags in the URL have to be modified
-    static let kittensUrl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=9794b500403919a4389764e8570d3f04&tags=cats&per_page=25&format=json&nojsoncallback=1&auth_token=72157665146145148-554d0292695af162&api_sig=4e6b559bc67df155f4b3caed0645bdf8"      // If we want to change kittens to something else, the tags in the URL have to be modified
-    static let publicFeedUrl = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1"
-        // This is a URL that returns the public feed from Flickr. The JSON format it returns does not contain the same data as
-        // for the two previous ones. The fields in the JSON are not formatted the same way and it did not have time to
-        // reformat in the correct way.
+    static let puppiesUrl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=2154026e8f625cf212d0c93fe1c53e7b&tags=dogs&format=json&nojsoncallback=1&auth_token=72157698407506635-61c128cceae68c6a&api_sig=49d04c8e477b249c4561f7148bd152d4"
+    static let kittensUrl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=2154026e8f625cf212d0c93fe1c53e7b&tags=cats&format=json&nojsoncallback=1&auth_token=72157698407506635-61c128cceae68c6a&api_sig=20fdebc9402376559e51b4aa89849655"
+    
+    //Sadly, Flickr do not provide any dynamic URL generator, which means that simply changing the tags in the URL will result in having an error response.
 }
 
 
@@ -24,15 +24,12 @@ class ImageGalleryViewController: UIViewController, UICollectionViewDataSource, 
     
     @IBOutlet weak var firstHeaderLabel: UILabel!
     @IBOutlet weak var secondHeaderLabel: UILabel!
-    @IBOutlet weak var thirdHeaderLabel: UILabel!
     @IBOutlet weak var puppyImagesCollectionView: UICollectionView!
     @IBOutlet weak var kittensImagesCollectionView: UICollectionView!
-    @IBOutlet weak var publicFeedImagesCollectionView: UICollectionView!
     
     private var dataManager = DataManager()
     private var puppyPhotos: [FlickrPhoto] = []
     private var kittensPhotos: [FlickrPhoto] = []
-    private var publicFeedPhotos: [FlickrPhoto] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,8 +49,6 @@ class ImageGalleryViewController: UIViewController, UICollectionViewDataSource, 
             return puppyPhotos.count
         } else if collectionView == kittensImagesCollectionView {
             return kittensPhotos.count
-        } else if collectionView == publicFeedImagesCollectionView {
-            return publicFeedPhotos.count
         }
         return 25       // Default value in case there is an error in the data fetching.
     }
@@ -77,21 +72,6 @@ class ImageGalleryViewController: UIViewController, UICollectionViewDataSource, 
         }
         return UICollectionViewCell()   // Return an empty cell in case there is a problem with storing the data in the cells.
     }
-        
-        //  This is the part of the code that was supposed to take care of the public feed, for which I didn't have time to
-        // reformat the public feed's data. The process would've been the same, but I would have needed to create a separate
-        // class with different fields, and to reformat the URL of the picture given in the JSON because all elements were
-        // separated with '\'. I rather focused on the things for which I had enough time to make sure most of the assignment
-        // was working.
-    
-//        else if collectionView == publicFeedImagesCollectionView {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PublicFeedCell", for: indexPath as IndexPath) as! ImagesFeedCell
-//            let data = try? Data(contentsOf: publicFeedPhotos[indexPath.row].photoURL as URL)
-//            cell.imageView.image = UIImage(data: data!)
-//            cell.metaDataLabel.text = publicFeedPhotos[indexPath.row].title
-//            return cell
-//        }
-    
     
     //MARK: - Private
     
@@ -112,13 +92,6 @@ class ImageGalleryViewController: UIViewController, UICollectionViewDataSource, 
             }
         })
     }
-    
-    // This is the part where the data from the public feed would have been stored in the publicFeed UIImage Array.
-//            else if tag == "" {
-//                self.thirdHeaderLabel.text = "public feed"
-//                self.publicFeedPhotos = flickrPhotos!
-//                self.publicFeedImagesCollectionView.reloadData()
-//            }
     
     // This method triggers the expected behavior when a cell from one of the collection view is pressed. It presents the ViewController with the tapped picture in full screen.
     
